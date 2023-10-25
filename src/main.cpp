@@ -234,6 +234,8 @@ void calcFlightMode()
   if (vBat1 < 2.7 || vBat2 < 2.7 || vBat3 < 2.7 // Battery too low
       || currBat > 30                           // Current too high
       || isComsInterrupted == 1                 // Coms failed
+      || pitch > 45 || pitch < -45              // Drone flipped
+      || roll > 45 || roll < -45                // Drone flipped
   )
   {
     forceShutdown = 1;
